@@ -5,81 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Menú Digital - Asadero La Esmeralda</title>
     <style>
-        :root {
-            --bg: #0f172a;
-            --card: #1e293b;
-            --accent: #f59e0b;
-            --accent2: #ef4444;
-            --text: #ffffff;
-            --soft: #334155;
-            --success: #22c55e;
-        }
-        body { margin: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; -webkit-tap-highlight-color: transparent; }
+        :root{--bg:#0f172a;--card:#1e293b;--accent:#f59e0b;--accent2:#ef4444;--text:#ffffff;--soft:#334155;--success:#22c55e;}
+        body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;scroll-behavior: smooth;}
 
-        header { 
-            background: linear-gradient(135deg, var(--accent), var(--accent2)); 
-            padding: 20px 15px; 
-            text-align: center; 
-            font-weight: 900; 
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
+        header{background:linear-gradient(135deg,var(--accent),var(--accent2));padding:18px;text-align:center;font-weight:900;color:white;position:sticky;top:0;z-index:100;box-shadow:0 4px 15px rgba(0,0,0,0.4);font-size:1.1rem;letter-spacing:1px;}
 
-        .main-wrapper { max-width: 600px; margin: auto; padding: 15px 15px 150px 15px; }
+        .main-wrapper{max-width:600px;margin:auto;padding:15px;padding-bottom:180px;}
 
-        .card { background: var(--card); padding: 18px; border-radius: 20px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .card{background:var(--card);padding:18px;border-radius:20px;margin-bottom:15px;border:1px solid rgba(255,255,255,0.05);box-shadow:0 10px 15px -3px rgba(0,0,0,0.1);}
+        .grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:8px;}
         
-        .btn { padding: 12px; border: none; border-radius: 12px; background: var(--soft); color: white; cursor: pointer; font-weight: bold; transition: 0.2s; }
-        .btn.active { background: var(--accent); color: #000; transform: scale(0.95); }
+        .btn{padding:12px;border:none;border-radius:12px;background:var(--soft);color:white;cursor:pointer;font-weight:bold;transition:0.2s;}
+        .btn.active{background:var(--accent);color:#000;transform:scale(0.95);}
 
-        .input-field { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--soft); background: #020617; color: white; margin-bottom: 8px; box-sizing: border-box; outline: none; }
-        .input-field:focus { border-color: var(--accent); }
+        .input-field { width:100%; padding:12px; border-radius:10px; border:1px solid var(--soft); background:#020617; color:white; margin-bottom:8px; box-sizing:border-box; font-family:inherit;}
 
-        .cat-container { display: flex; overflow-x: auto; gap: 8px; margin-bottom: 15px; padding-bottom: 8px; scrollbar-width: none; }
+        .cat-container { display: flex; overflow-x: auto; gap: 8px; margin-bottom: 15px; padding-bottom: 5px; scrollbar-width: none; -webkit-overflow-scrolling: touch;}
         .cat-container::-webkit-scrollbar { display: none; }
-        
-        .btn-cat { flex: 0 0 auto; padding: 10px 18px; border: 1px solid var(--soft); border-radius: 20px; background: #020617; color: white; cursor: pointer; font-size: 13px; font-weight: bold; transition: 0.3s; }
-        .btn-cat.active { background: var(--accent); color: #000; border-color: var(--accent); box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
+        .btn-cat { flex: 0 0 auto; padding: 10px 18px; border: 1px solid var(--soft); border-radius: 20px; background: #020617; color: white; cursor: pointer; font-size: 13px; font-weight: bold;}
+        .btn-cat.active { background: var(--accent); color: #000; border-color: var(--accent); }
 
-        .chips-container { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .chip {
-            display: flex; flex-direction: column; background: #020617;
-            border: 1px solid var(--soft); border-radius: 15px; overflow: hidden; 
-            cursor: pointer; position: relative; transition: transform 0.1s;
-        }
-        .chip:active { transform: scale(0.97); }
-        .chip img { width: 100%; height: 120px; object-fit: cover; background: #1e293b; border-bottom: 1px solid var(--soft); }
-        .chip-info { padding: 10px; }
-        .chip-info b { display: block; font-size: 13px; color: #ffffff; min-height: 32px; margin-bottom: 5px; line-height: 1.2; }
-        .chip-info span { color: var(--accent); font-weight: 800; font-size: 16px; }
+        .chips-container{display:grid;grid-template-columns: 1fr 1fr; gap:12px;}
+        .chip{ display:flex; flex-direction:column; background:#020617; border:1px solid var(--soft); border-radius:15px; overflow:hidden; cursor:pointer; transition: 0.2s;}
+        .chip:active { transform: scale(0.96); }
+        .chip img { width:100%; height:115px; object-fit:cover; background:#1e293b;}
+        .chip-info { padding:10px; }
+        .chip-info b { display:block; font-size:13px; color:#ffffff; height: 32px; overflow: hidden; margin-bottom: 5px; line-height: 1.2;}
+        .chip-info span { color:var(--accent); font-weight:800; font-size:16px;}
 
-        .item-pedido {
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(0,0,0,0.3); padding: 12px; border-radius: 15px; margin-bottom: 8px;
-            border-left: 4px solid var(--accent);
-        }
+        .item-pedido { display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.3); padding:10px; border-radius:12px; margin-bottom:8px; border-left: 3px solid var(--accent);}
 
-        .compact-footer {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(15px);
-            border-top: 2px solid var(--accent); z-index: 1000; padding: 20px;
-        }
-
+        .compact-footer { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); border-top: 2px solid var(--accent); z-index: 1000; padding: 15px; }
         .footer-content { display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: auto; }
-        .btn-send { background: var(--success); padding: 14px 20px; border-radius: 12px; border: none; color: white; font-weight: 900; cursor: pointer; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4); }
+        .btn-send { background:var(--success); padding: 14px 20px; border-radius: 12px; border:none; color:white; font-weight:900; cursor:pointer; box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);}
 
-        label { display: block; margin-bottom: 8px; font-size: 11px; color: var(--accent); text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
-        .del-btn { background: var(--accent2); color: white; border: none; border-radius: 8px; width: 30px; height: 30px; cursor: pointer; font-weight: bold; }
+        .pay-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 10px; }
+        .pay-btn { padding: 8px; border-radius: 8px; border: none; font-size: 10px; font-weight: 800; cursor: pointer; text-align: center; text-decoration: none; color: white; }
+
+        label{display:block; margin-bottom:6px; font-size:10px; color:var(--accent); text-transform:uppercase; font-weight:800; letter-spacing: 1px;}
+        .del-btn { background:var(--accent2); color:white; border:none; border-radius:8px; width:28px; height:28px; cursor:pointer; font-weight: bold;}
         .hidden { display: none !important; }
-        
-        /* Animación de carga */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .chip { animation: fadeIn 0.3s ease forwards; }
     </style>
 </head>
 <body>
@@ -88,42 +53,52 @@
 
 <div class="main-wrapper">
     <div class="card">
-        <label>📍 Tipo de entrega</label>
+        <label>📍 ¿Cómo deseas tu pedido?</label>
         <div class="grid" style="grid-template-columns: 1fr 1fr; margin-bottom:10px;">
             <button class="btn active" id="btnLocal" onclick="setServicio('local')">EN EL LOCAL</button>
-            <button class="btn" id="btnDomi" onclick="setServicio('domicilio')">A DOMICILIO</button>
+            <button class="btn" id="btnDomi" onclick="setServicio('domicilio')">DOMICILIO</button>
         </div>
         
         <div id="formDomicilio" class="hidden">
-            <input type="text" id="domiNombre" class="input-field" placeholder="Nombre completo">
-            <input type="text" id="domiDir" class="input-field" placeholder="Dirección y barrio">
+            <input type="text" id="domiNombre" class="input-field" placeholder="Tu Nombre">
+            <input type="text" id="domiDir" class="input-field" placeholder="Dirección de entrega y Barrio">
         </div>
 
         <div id="sectionMesas">
-            <label>Tu Mesa:</label>
+            <label>Selecciona tu Mesa:</label>
             <div class="grid" id="mesas"></div>
         </div>
+
+        <label style="margin-top:10px;">📝 Observaciones del pedido:</label>
+        <input type="text" id="observaciones" class="input-field" placeholder="Ej: Sin cebolla, gaseosa fría, etc.">
     </div>
 
     <div class="card">
-        <label>🍴 Categorías</label>
+        <label>🍴 Elige tus platos</label>
         <div id="cat-list" class="cat-container"></div>
         <div id="chips-menu" class="chips-container"></div>
     </div>
 
     <div class="card">
-        <label>🛒 Resumen del pedido</label>
-        <div id="resumen-lista">
-            <p style="text-align:center; font-size:12px; opacity:0.5;">No has añadido platos aún</p>
+        <label>💳 Medios de Pago (Clic para pagar)</label>
+        <div class="pay-grid">
+            <a href="https://pago.nequi.com.co" target="_blank" class="pay-btn" style="background:#8233f0;">NEQUI</a>
+            <a href="https://www.daviplata.com" target="_blank" class="pay-btn" style="background:#ef4444;">DAVIPLATA</a>
+            <a href="#" class="pay-btn" style="background:#00d1b2;">BREVE</a>
         </div>
+    </div>
+
+    <div class="card">
+        <label>🛒 Tu Pedido</label>
+        <div id="resumen-lista"></div>
     </div>
 </div>
 
 <div class="compact-footer">
     <div class="footer-content">
         <div>
-            <p style="margin:0; font-size:1.6rem; font-weight:900; color:var(--accent);" id="total-val">$0</p>
-            <span id="badge-items" style="font-size:12px; font-weight:bold; opacity:0.8;">0 productos</span>
+            <p style="margin:0; font-size:1.5rem; font-weight:900; color:var(--accent);" id="total-val">$0</p>
+            <span id="badge-items" style="font-size:11px; font-weight:bold; opacity:0.8;">0 productos</span>
         </div>
         <button class="btn-send" onclick="enviarWhatsApp()">PEDIR POR WHATSAPP</button>
     </div>
@@ -134,6 +109,15 @@ const WHATSAPP_NEGOCIO = "573142553018";
 const URL_MENU = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTU3FT66_0vVAygWPIDfjIAhGwnKGWeBhDB3cVrzkMZQRP6M0ONz2_xwy-u8Q7muAoP6oa4QFxXc7xb/pub?output=csv";
 
 let menu = [], pedido = [], tipoServicio = 'local', mesaSeleccionada = "";
+
+// Función para corregir URLs de Google Drive (UC Export)
+function fixImageUrl(url) {
+    if (!url) return '';
+    let id = '';
+    if (url.includes('id=')) id = url.split('id=')[1].split('&')[0];
+    else if (url.includes('/d/')) id = url.split('/d/')[1].split('/')[0];
+    return id ? `https://drive.google.com/uc?export=view&id=${id}` : url;
+}
 
 function parseCSV(text) {
     const lines = text.split(/\r?\n/);
@@ -151,19 +135,6 @@ function parseCSV(text) {
     });
 }
 
-// Función Corregida para imágenes de Google Drive
-function fixImageUrl(url) {
-    if (!url) return '';
-    let id = '';
-    if (url.includes('id=')) {
-        id = url.split('id=')[1].split('&')[0];
-    } else if (url.includes('/d/')) {
-        id = url.split('/d/')[1].split('/')[0];
-    }
-    // URL de renderizado directo de Google Drive
-    return id ? `https://lh3.googleusercontent.com/d/${id}` : url;
-}
-
 async function cargarMenu() {
     try {
         const res = await fetch(URL_MENU);
@@ -179,10 +150,7 @@ async function cargarMenu() {
 
         renderCategorias();
         crearMesasSelector();
-    } catch (e) { 
-        console.error("Error cargando menú:", e); 
-        document.getElementById("chips-menu").innerHTML = "Error cargando productos...";
-    }
+    } catch (e) { console.error("Error cargando menú:", e); }
 }
 
 function renderCategorias() {
@@ -196,11 +164,9 @@ function filtrarCat(cat, btn) {
     document.querySelectorAll('.btn-cat').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const cont = document.getElementById("chips-menu");
-    
-    // Lazy loading nativo añadido (loading="lazy")
     cont.innerHTML = menu.filter(m => m.cat === cat).map(p => `
         <div class="chip" onclick="agregarAlPedido('${p.nombre}')">
-            <img src="${p.img}" loading="lazy" alt="${p.nombre}" onerror="this.src='https://via.placeholder.com/150?text=Sin+Imagen'">
+            <img src="${p.img}" loading="lazy" onerror="this.src='https://via.placeholder.com/150?text=Cargando...'">
             <div class="chip-info">
                 <b>${p.nombre}</b>
                 <span>$${p.precio.toLocaleString('es-CO')}</span>
@@ -212,13 +178,10 @@ function crearMesasSelector() {
     const cont = document.getElementById("mesas");
     cont.innerHTML = "";
     for(let i=1; i<=12; i++) {
-        let b = document.createElement("button"); 
-        b.className="btn"; 
-        b.textContent=i;
+        let b = document.createElement("button"); b.className="btn"; b.textContent=i;
         b.onclick = () => {
             document.querySelectorAll("#mesas .btn").forEach(x => x.classList.remove("active"));
-            b.classList.add("active"); 
-            mesaSeleccionada = i;
+            b.classList.add("active"); mesaSeleccionada = i;
         };
         cont.appendChild(b);
     }
@@ -230,6 +193,7 @@ function setServicio(t) {
     document.getElementById('btnDomi').classList.toggle('active', t === 'domicilio');
     document.getElementById('formDomicilio').classList.toggle('hidden', t === 'local');
     document.getElementById('sectionMesas').classList.toggle('hidden', t === 'domicilio');
+    actualizarTotales();
 }
 
 function agregarAlPedido(nombre) {
@@ -246,12 +210,6 @@ function quitarDelPedido(nombre) {
 
 function actualizarResumen() {
     const cont = document.getElementById("resumen-lista");
-    if (pedido.length === 0) {
-        cont.innerHTML = '<p style="text-align:center; font-size:12px; opacity:0.5;">No has añadido platos aún</p>';
-        actualizarTotales();
-        return;
-    }
-
     const agrupado = pedido.reduce((acc, curr) => {
         if(!acc[curr.nombre]) acc[curr.nombre] = {...curr, cant: 0};
         acc[curr.nombre].cant++;
@@ -276,31 +234,34 @@ function actualizarTotales() {
 function enviarWhatsApp() {
     if(!pedido.length) return alert("El carrito está vacío");
     
-    let msg = `🔥 *PEDIDO: ASADERO LA ESMERALDA*\n\n`;
+    let msg = `🔥 *NUEVO PEDIDO: ASADERO LA ESMERALDA*\n`;
+    msg += `━━━━━━━━━━━━━━━━━━\n`;
+    
     if(tipoServicio === 'local') {
-        if(!mesaSeleccionada) return alert("Por favor selecciona tu mesa");
-        msg += `📍 *TIPO:* EN EL LOCAL\n🪑 *MESA:* ${mesaSeleccionada}\n`;
+        if(!mesaSeleccionada) return alert("Por favor selecciona una mesa");
+        msg += `📍 *TIPO:* Local 🪑 *MESA:* ${mesaSeleccionada}\n`;
     } else {
         const nom = document.getElementById("domiNombre").value;
         const dir = document.getElementById("domiDir").value;
-        if(!nom || !dir) return alert("Completa nombre y dirección para el domicilio");
-        msg += `🛵 *TIPO:* DOMICILIO\n👤 *CLIENTE:* ${nom}\n📍 *DIRECCIÓN:* ${dir}\n`;
+        if(!nom || !dir) return alert("Completa nombre y dirección");
+        msg += `🛵 *TIPO:* Domicilio\n👤 *CLIENTE:* ${nom}\n📍 *DIR:* ${dir}\n`;
     }
 
-    msg += `\n*DETALLE DEL PEDIDO:*\n`;
+    const obs = document.getElementById("observaciones").value;
+    if(obs) msg += `📝 *OBS:* ${obs}\n`;
+
+    msg += `━━━━━━━━━━━━━━━━━━\n`;
     const agrupado = pedido.reduce((acc, curr) => {
         acc[curr.nombre] = (acc[curr.nombre] || 0) + 1;
         return acc;
     }, {});
 
-    for(const [nombre, cant] of Object.entries(agrupado)) {
-        msg += `• ${cant}x ${nombre}\n`;
-    }
+    for(const [nombre, cant] of Object.entries(agrupado)) msg += `✅ ${cant}x ${nombre}\n`;
 
-    msg += `\n💰 *TOTAL A PAGAR: ${document.getElementById("total-val").textContent}*`;
+    msg += `━━━━━━━━━━━━━━━━━━\n`;
+    msg += `💰 *TOTAL A PAGAR: ${document.getElementById("total-val").textContent}*`;
     
-    const url = `https://wa.me/${WHATSAPP_NEGOCIO}?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
+    window.open(`https://wa.me/${WHATSAPP_NEGOCIO}?text=${encodeURIComponent(msg)}`);
 }
 
 cargarMenu();
